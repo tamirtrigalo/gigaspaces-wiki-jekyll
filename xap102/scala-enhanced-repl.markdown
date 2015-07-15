@@ -51,8 +51,8 @@ Now we'll execute a task using another helper method:
 
 {% highlight scala %}
 xap> execute(gigaSpace) { holder =>
-     | holder.clusterInfo.getNumberOfInstances
-     | }
+     holder.clusterInfo.getNumberOfInstances
+     }
 res1: com.gigaspaces.async.AsyncFuture[Integer] = org.openspaces.core.transaction.internal.InternalAsyncFuture@f1423ba
 
 xap> val numberOfInstances = res1.get
@@ -73,8 +73,8 @@ Now execute a task that reads this entry and returns is `content` property:
 
 {% highlight scala %}
 xap> execute(gigaSpace) { holder =>
-     |   holder.gigaSpace.read(Data()).content
-     | }
+     holder.gigaSpace.read(Data()).content
+     }
 res3: com.gigaspaces.async.AsyncFuture[String] = org.openspaces.core.transaction.internal.InternalAsyncFuture@7c767c0d
 
 xap> val dataContent = res3.get
